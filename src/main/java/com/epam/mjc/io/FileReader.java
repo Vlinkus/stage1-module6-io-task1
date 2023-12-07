@@ -2,7 +2,6 @@ package com.epam.mjc.io;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
@@ -20,7 +19,7 @@ public class FileReader {
             while ((c = input.read()) != -1)
                 text.append((char) c);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new InputFileNotFoundException(e);
         }
         return text.toString();
     }
